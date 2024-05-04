@@ -1,0 +1,34 @@
+Business Phone: </label>&nbsp;&nbsp;<input type ="text" name ="bp"><br><br>
+            
+            
+            
+            <label>    State/Province : </label>&nbsp;&nbsp;<input type ="text" name ="state">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            
+            &nbsp;&nbsp;&nbsp;&nbsp;<label>Website : </label>&nbsp;&nbsp;<input type ="text" name ="web"><br><br>
+            
+            
+           
+            
+            
+            
+            <label>   Zip Code : </label>&nbsp;&nbsp;<input type ="text" name ="zip"><br><br> 
+            
+            
+            <div class ="btn">
+            
+                <button id ="btn1">Cancel</button>
+            
+            <button type="submit" id ="btn1" >Submit</button>
+            </div>
+        </form>
+            
+            
+        </fieldset>
+        
+        
+        
+        
+        
+    </body>
+</html>
