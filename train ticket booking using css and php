@@ -1,0 +1,716 @@
+CODE OF THE PROJECT
+
+
+<!-- hello.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="mystyle.css">
+
+</head>
+
+<body>
+  <img  class="bg"  src="train4.jpg" alt="img">
+<button class="tablink" onclick="openPage('Home', this, 'white')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="openPage('signup', this, 'white')" >sign up</button>
+<button class="tablink" onclick="openPage('signin', this, 'white')">sign in</button>
+<button class="tablink" onclick="openPage('About', this, 'white')">About</button>
+
+<div id="Home" class="tabcontent">
+  
+    <div class="myhome">
+    
+    <header>
+        <h2>Train ticket Booking</h2>
+    </header>
+
+    <form action="index.php" method="post">
+
+        <pre><label for="name">Name :     </label>&nbsp;<input  type = "text" name = "name" id="name" placeholder= "enter name"></pre>
+
+        
+        <pre><label for ="email">email :    </label>&nbsp;<input  type = "text" name = "email" id="email" placeholder= "enter email"></pre>
+
+        <pre><label for="from">From :     </label>&nbsp;<input  type = "text" name = "from" id="from" placeholder= "Leaving from"><br>
+    &nbsp;<label for="to">&nbsp;<label>To :      </label>&nbsp;<input  type = "text" name = "to"  id="to" placeholder= "going to"></pre>
+
+        
+    <pre><label for="class">classes:  </label>&nbsp;<input list="classes" name="class" id="class"><datalist id="classes">
+        <option value="First class">
+        <option value="A/C">
+        <option value="First class AC">
+        <option value="general">
+        <option value="sleeper"></datalist></pre>
+    <pre><label for="dt">Date :      </label>&nbsp;<input type="date" name ="dt" id="dt"  placeholder="enter date"></pre>
+
+    
+    <div class="bt">
+        <pre><input class="btn" type="button" value="cancel">&nbsp;&nbsp;&nbsp;<button class ="btn" type="submit" onclick="alert('response submitted.')" >Submit</button></pre>
+    </div>
+
+    
+
+</form>
+
+<div class="footer">
+  <label id = "foot">Mysuru</label>
+  <label id = "foot">Pune</label>
+  <label id = "foot">Mumbai</label>
+  <label id = "foot">Bangluru</label>
+</div>
+
+</div>
+
+</div>
+
+
+
+<div id="signup" class="tabcontent">
+  
+    <header>
+        <h3>sign up</h3>
+    </header>
+    
+    <form action="" method="post">
+
+      
+        <label for="name" for = "name">Name      :</label>
+        <input  type = "text" name = "name" id="name" placeholder= "enter name"><br><br>
+
+        <label for ="email"  for = "email" >email      :</label>
+        <input  type = "text" name = "email" id="email" placeholder= "enter email"><br>
+
+        <br>
+        <label for="pass" for = "pass">Password     :</label>
+        <input  type = "password" name = "pass" id="pass" placeholder= "enter password"><br>
+
+        <br> 
+
+        <label for="cpass" for = "cpass">confirm password      :</label>
+        <input  type = "password" name = "cpass"  id="cpass" placeholder= "confirm password"><br><br>
+
+        <button class ="btn" type="submit" >register</button>
+      
+        </form>
+
+</div>
+
+<div id="signin" class="tabcontent">
+
+  <header>
+    <h3>sign in</h3>
+  </header>
+  
+
+  <form>
+
+    <pre><label for ="email">email :    </label>&nbsp;<input  type = "text" name = "email" id="email" placeholder= "enter email"></pre>
+
+    <pre><label for="pass">Password     :</label>&nbsp;<input  type = "text" name = "pass" id="pass" placeholder= "enter password"><br></pre>
+  
+    &nbsp;&nbsp;<input class ="btn" type="button" onclick= "alert(registered_sucessfully);"   value ="sign in">
+
+  </form>
+
+    
+  
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>About</h3>
+  <p>Who we are and what we do.</p>
+
+
+
+  <br>
+
+  <p>this site is built using HTML, CSS and php</p><br>
+
+  <p>this is train ticket booking site where if  you enter your details<br>it wil store in database using php and mysql...</p>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
+
+
+
+
+/----------------------------------------------------------------------------------------------------------------/
+
+
+
+
+
+
+
+/*mystyle.css */
+
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #4953af;
+  color: rgb(112, 113, 120);
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #9b9696;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: rgb(20, 19, 19);
+  display: none;
+  padding: 100px 20px;
+  height: 120%;
+  
+  
+}
+
+/*#Home {
+    
+   #singin {
+
+  
+}
+    
+}*/
+#signup {background-color: rgb(104, 109, 203);}
+
+#About {background-color: rgb(148, 150, 157);}
+
+/*-----------------------------------------*/
+
+
+
+.bg{
+    
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.68;
+
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+header{
+    text-align: center;
+    color: rgb(239, 240, 246);
+    padding: 20px;
+    margin :auto;
+    font-family: Arial, Helvetica, sans-serif;
+   
+    font-size: 30px;
+}
+
+
+
+form{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin :12px auto;
+    width : 40%;
+    height: 60%;
+    padding:25px 30px;
+    border: 2px solid black;
+    border-radius: 10px;
+    outline: none;
+    display: block;
+    color: rgba(250, 250, 252, 0.852);
+    font-size: 24px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+input{
+    display: inline-block;
+    border-radius: 3px;
+    padding: 4px;
+}
+
+
+
+.bt{
+    max-width: 30%;
+    padding: 5px;
+    margin: auto;
+}
+   
+        
+.btn{
+    color: rgb(19, 19, 18);
+    padding:7px  6px;
+    background-color: rgb(246, 244, 237);
+    font-size: 14px;
+    border: 1px solid rgb(52, 45, 45);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.footer{
+    max-width: 40%;
+    padding: 20px;
+    margin: auto;
+}
+
+#foot{
+    display :inline;
+    color: rgb(10, 10, 10);
+    border: 1px solid rgb(250, 246, 246);
+    border-radius: 20%;
+    padding: 20px;;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#foot:hover{
+
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+
+
+
+
+
+
+/*index.php */
+
+<?php 
+
+$servername = "localhost"; 
+
+$username = "root"; 
+
+$password = ""; 
+
+$conn = new mysqli($servername, $username, $password); 
+
+if ($conn->connect_error) { 
+	die("Connection failure: ". $conn->connect_error); 
+} 
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$from = $_POST['from'];
+$to = $_POST['to'];
+$class = $_POST['class'];
+
+$sql = "INSERT INTO `mydb`.`train` (`name`, `email`, `from_`, `to_`, `classes`, `date`) VALUES ('$name', 
+'$email', '$from', '$to', '$class', current_timestamp());";
+
+if($conn->query($sql)== true){
+    echo "sucessfully inserted";
+}
+else{
+    echo "ERROR: $sql <br> $conn->error";
+
+}
+    $conn->close();
+
+?> 
+CODE OF THE PROJECT
+
+
+<!-- hello.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="mystyle.css">
+
+</head>
+
+<body>
+  <img  class="bg"  src="train4.jpg" alt="img">
+<button class="tablink" onclick="openPage('Home', this, 'white')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="openPage('signup', this, 'white')" >sign up</button>
+<button class="tablink" onclick="openPage('signin', this, 'white')">sign in</button>
+<button class="tablink" onclick="openPage('About', this, 'white')">About</button>
+
+<div id="Home" class="tabcontent">
+  
+    <div class="myhome">
+    
+    <header>
+        <h2>Train ticket Booking</h2>
+    </header>
+
+    <form action="index.php" method="post">
+
+        <pre><label for="name">Name :     </label>&nbsp;<input  type = "text" name = "name" id="name" placeholder= "enter name"></pre>
+
+        
+        <pre><label for ="email">email :    </label>&nbsp;<input  type = "text" name = "email" id="email" placeholder= "enter email"></pre>
+
+        <pre><label for="from">From :     </label>&nbsp;<input  type = "text" name = "from" id="from" placeholder= "Leaving from"><br>
+    &nbsp;<label for="to">&nbsp;<label>To :      </label>&nbsp;<input  type = "text" name = "to"  id="to" placeholder= "going to"></pre>
+
+        
+    <pre><label for="class">classes:  </label>&nbsp;<input list="classes" name="class" id="class"><datalist id="classes">
+        <option value="First class">
+        <option value="A/C">
+        <option value="First class AC">
+        <option value="general">
+        <option value="sleeper"></datalist></pre>
+    <pre><label for="dt">Date :      </label>&nbsp;<input type="date" name ="dt" id="dt"  placeholder="enter date"></pre>
+
+    
+    <div class="bt">
+        <pre><input class="btn" type="button" value="cancel">&nbsp;&nbsp;&nbsp;<button class ="btn" type="submit" onclick="alert('response submitted.')" >Submit</button></pre>
+    </div>
+
+    
+
+</form>
+
+<div class="footer">
+  <label id = "foot">Mysuru</label>
+  <label id = "foot">Pune</label>
+  <label id = "foot">Mumbai</label>
+  <label id = "foot">Bangluru</label>
+</div>
+
+</div>
+
+</div>
+
+
+
+<div id="signup" class="tabcontent">
+  
+    <header>
+        <h3>sign up</h3>
+    </header>
+    
+    <form action="" method="post">
+
+      
+        <label for="name" for = "name">Name      :</label>
+        <input  type = "text" name = "name" id="name" placeholder= "enter name"><br><br>
+
+        <label for ="email"  for = "email" >email      :</label>
+        <input  type = "text" name = "email" id="email" placeholder= "enter email"><br>
+
+        <br>
+        <label for="pass" for = "pass">Password     :</label>
+        <input  type = "password" name = "pass" id="pass" placeholder= "enter password"><br>
+
+        <br> 
+
+        <label for="cpass" for = "cpass">confirm password      :</label>
+        <input  type = "password" name = "cpass"  id="cpass" placeholder= "confirm password"><br><br>
+
+        <button class ="btn" type="submit" >register</button>
+      
+        </form>
+
+</div>
+
+<div id="signin" class="tabcontent">
+
+  <header>
+    <h3>sign in</h3>
+  </header>
+  
+
+  <form>
+
+    <pre><label for ="email">email :    </label>&nbsp;<input  type = "text" name = "email" id="email" placeholder= "enter email"></pre>
+
+    <pre><label for="pass">Password     :</label>&nbsp;<input  type = "text" name = "pass" id="pass" placeholder= "enter password"><br></pre>
+  
+    &nbsp;&nbsp;<input class ="btn" type="button" onclick= "alert(registered_sucessfully);"   value ="sign in">
+
+  </form>
+
+    
+  
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>About</h3>
+  <p>Who we are and what we do.</p>
+
+
+
+  <br>
+
+  <p>this site is built using HTML, CSS and php</p><br>
+
+  <p>this is train ticket booking site where if  you enter your details<br>it wil store in database using php and mysql...</p>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
+
+
+
+
+/----------------------------------------------------------------------------------------------------------------/
+
+
+
+
+
+
+
+/*mystyle.css */
+
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #4953af;
+  color: rgb(112, 113, 120);
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #9b9696;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: rgb(20, 19, 19);
+  display: none;
+  padding: 100px 20px;
+  height: 120%;
+  
+  
+}
+
+/*#Home {
+    
+   #singin {
+
+  
+}
+    
+}*/
+#signup {background-color: rgb(104, 109, 203);}
+
+#About {background-color: rgb(148, 150, 157);}
+
+/*-----------------------------------------*/
+
+
+
+.bg{
+    
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.68;
+
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+header{
+    text-align: center;
+    color: rgb(239, 240, 246);
+    padding: 20px;
+    margin :auto;
+    font-family: Arial, Helvetica, sans-serif;
+   
+    font-size: 30px;
+}
+
+
+
+form{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin :12px auto;
+    width : 40%;
+    height: 60%;
+    padding:25px 30px;
+    border: 2px solid black;
+    border-radius: 10px;
+    outline: none;
+    display: block;
+    color: rgba(250, 250, 252, 0.852);
+    font-size: 24px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+input{
+    display: inline-block;
+    border-radius: 3px;
+    padding: 4px;
+}
+
+
+
+.bt{
+    max-width: 30%;
+    padding: 5px;
+    margin: auto;
+}
+   
+        
+.btn{
+    color: rgb(19, 19, 18);
+    padding:7px  6px;
+    background-color: rgb(246, 244, 237);
+    font-size: 14px;
+    border: 1px solid rgb(52, 45, 45);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.footer{
+    max-width: 40%;
+    padding: 20px;
+    margin: auto;
+}
+
+#foot{
+    display :inline;
+    color: rgb(10, 10, 10);
+    border: 1px solid rgb(250, 246, 246);
+    border-radius: 20%;
+    padding: 20px;;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#foot:hover{
+
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+
+
+
+
+
+
+/*index.php */
+
+<?php 
+
+$servername = "localhost"; 
+
+$username = "root"; 
+
+$password = ""; 
+
+$conn = new mysqli($servername, $username, $password); 
+
+if ($conn->connect_error) { 
+	die("Connection failure: ". $conn->connect_error); 
+} 
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$from = $_POST['from'];
+$to = $_POST['to'];
+$class = $_POST['class'];
+
+$sql = "INSERT INTO `mydb`.`train` (`name`, `email`, `from_`, `to_`, `classes`, `date`) VALUES ('$name', 
+'$email', '$from', '$to', '$class', current_timestamp());";
+
+if($conn->query($sql)== true){
+    echo "sucessfully inserted";
+}
+else{
+    echo "ERROR: $sql <br> $conn->error";
+
+}
+    $conn->close();
+
+?> 
